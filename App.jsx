@@ -32,7 +32,7 @@ export default function App() {
                 <h1>Spotify Demo</h1>
             </header>
             <main>
-                <Form onFinish={handleSearch} layout="inline">
+                <Form onFinish={handleSearch} layout="inline" initialValues={{ searchTerm: 'Adele', limit: 5 }}>
                     <Form.Item
                         name="searchTerm"
                         rules={[{ required: true, message: 'Please input your search term!' }]}
@@ -49,7 +49,8 @@ export default function App() {
                         <Button type="primary" htmlType="submit">Search</Button>
                     </Form.Item>
                 </Form>
-                <div style={{ textAlign: 'center', margin: '20px' }}>
+                <div style={{ textAlign: 'center', margin: '20px' }}// I used ChatGpt For help with Button sizing syntax
+                > 
                     <Button onClick={() => carouselRef.current.prev()} shape="circle" icon={<LeftOutlined />} />
                     <Button onClick={() => carouselRef.current.next()} shape="circle" icon={<RightOutlined />} style={{ marginLeft: '10px' }} />
                 </div>
